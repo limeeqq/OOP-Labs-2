@@ -7,7 +7,6 @@ class Database:
         self.filename = filename
 
     def save(self, people_list):
-        """Запис у файл у власному форматі"""
         try:
             with open(self.filename, "w", encoding="utf-8") as f:
                 for p in people_list:
@@ -35,12 +34,11 @@ class Database:
                         f.write(f'    "lastname": "{p.last_name}",\n')
                         f.write(f'    "rank": "{p.rank}"\n')
                         f.write("};\n")
-            print("Дані успішно збережено!")
+            print("Дані успішно збережено")
         except Exception as e:
-            print(f"Помилка збереження: {e}")
+            print(f"Помилка збереження {e}")
 
     def load(self):
-        """Читання файлу та перетворення тексту назад в об'єкти"""
         people = []
         try:
             with open(self.filename, "r", encoding="utf-8") as f:
@@ -50,9 +48,7 @@ class Database:
             while i < len(lines):
                 line = lines[i]
                 
-                # Логіка парсингу: знаходимо заголовок і читаємо наступні рядки
                 if line.startswith("Student"):
-                    # Пропускаємо '{' і беремо значення
                     fn = self._get_val(lines[i+2])
                     ln = self._get_val(lines[i+3])
                     cr = int(self._get_val(lines[i+4]))
@@ -82,9 +78,7 @@ class Database:
             return []
 
     def _get_val(self, line):
-        """Допоміжний метод: витягує текст між лапками"""
-        # Приклад рядка: "firstname": "Ivan",
         parts = line.split('"')
         if len(parts) >= 4:
-            return parts[3] # Повертає те, що в других лапках
+            return parts[3]
         return ""

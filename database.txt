@@ -1,0 +1,6 @@
+Astronaut КоляНеколяй
+{
+    "firstname": "Коля",
+    "lastname": "Неколяй",
+    "rank": "Сержант"
+};

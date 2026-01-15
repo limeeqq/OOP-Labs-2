@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-#батьківський клас
+#батьківський клас абстактний базовий клас
 class Person(ABC):
     def __init__(self, first_name, last_name):
         self.first_name = first_name

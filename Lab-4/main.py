@@ -1,14 +1,14 @@
 from typing import Callable, List
 
 FuelHandlerDelegate = Callable[[str], None]
-
+    #пальне
 class Event:
     def __init__(self):
         self._handlers: List[FuelHandlerDelegate] = []
 
     def add(self, handler: FuelHandlerDelegate):
         self._handlers.append(handler)
-
+        #викликаний методом 
     def invoke(self, message: str):
         for handler in self._handlers:
             handler(message)
@@ -35,8 +35,7 @@ if __name__ == "__main__":
     print("делегат і лямбда")
     
     SortDelegate = Callable[[list], list]
-    
-
+    #лямбда функція
     my_sort_delegate: SortDelegate = lambda arr: sorted(arr)
     
     numbers = [5, 1, 9, -2]

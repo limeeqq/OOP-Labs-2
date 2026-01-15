@@ -10,6 +10,6 @@ class Student(Person):
     def get_info(self):
         return f"Student: {self.first_name} {self.last_name}, Course: {self.course}, Ticket: {self.ticket}, Born: {self.birth_date}"
 
-    # додатковий спів
+
     def sing(self):
         return "студент співає"

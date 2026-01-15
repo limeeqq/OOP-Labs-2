@@ -1,7 +1,7 @@
 import unittest, sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from Domain.student import Student
-
+    #aaa
 class TestStudent(unittest.TestCase):
     def setUp(self):
         self.s = Student("Test", "User", 3, "KB1", "15-07-2005", "IP")
